@@ -10,25 +10,150 @@
 <meta property="og:description" content="CARD（Chinese Ancestral Repository of Descendants，中华族裔人物资料库）是依托历代家谱史料构建的开放人物谱系数据库。">
 <meta property="og:url" content="https://cardreader.top/">
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;}
-body{color:#222;background:#f8f8f6;line-height:1.6;}
-.container{max-width:1024px;margin:0 auto;padding:2rem 1rem;}
-header{display:flex;justify-content:space-between;align-items:center;padding-bottom:2rem;border-bottom:1px solid #ddd;margin-bottom:2rem;}
-.logo{font-size:2rem;font-weight:bold;color:#1a365d;}
-.logo small{font-size:1rem;font-weight:normal;color:#444;display:block;}
-.lang-switch button{border:1px solid #1a365d;background:#fff;color:#1a365d;padding:0.4rem 0.8rem;border-radius:4px;cursor:pointer;margin-left:0.5rem;}
-.lang-switch button.active{background:#1a365d;color:#fff;}
-.hero{text-align:center;margin-bottom:3rem;}
-.hero h2{font-size:1.4rem;font-weight:normal;color:#444;margin:0.6rem 0 1.8rem;}
-.search-wrap{display:flex;max-width:600px;margin:0 auto;gap:0.5rem;}
-#nameInput{flex:1;padding:0.8rem;font-size:1rem;border:1px solid #aaa;border-radius:4px;}
-#searchBtn{padding:0.8rem 1.4rem;background:#1a365d;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:1rem;}
-.section{margin:2.5rem 0;}
-.section h3{font-size:1.4rem;margin-bottom:1rem;color:#1a365d;border-left:4px solid #1a365d;padding-left:0.8rem;}
-pre{background:#222;color:#a5f3fc;padding:1rem;border-radius:6px;overflow-x:auto;font-size:0.9rem;}
-.api-url{background:#eef2f7;padding:0.8rem;border-radius:4px;font-family:monospace;margin:1rem 0;}
-footer{margin-top:4rem;padding-top:2rem;border-top:1px solid #ddd;color:#555;font-size:0.9rem;}
+:root{
+  --paper:#f4eddd;
+  --paper-2:#efe6d2;
+  --card:#fbf7ec;
+  --ink:#1a365d;
+  --text:#242424;
+  --muted:#5a5346;
+  --zhu:#9b2d20;
+  --zhe:#a0432f;
+  --rule:#cbbfa4;
+  --maxw:980px;
+  --radius:3px;
+  --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC","SimSun",serif;
+  --sans:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --mono:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --code-bg:#241d16;
+  --code-bar:#332a20;
+  --code-rule:#4a3d2e;
+  --code-fg:#e8d3a9;
+  --code-get:#7ee0c0;
+  --code-path:#8fd0ff;
+  --code-q:#c9a2ff;
+  --code-val:#ffd479;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  font-family:var(--sans);
+  color:var(--text);
+  background-color:var(--paper);
+  background-image:
+    radial-gradient(circle at 12% 16%, rgba(160,67,47,.055) 0, rgba(160,67,47,0) 42%),
+    radial-gradient(circle at 86% 78%, rgba(155,45,32,.045) 0, rgba(155,45,32,0) 40%),
+    repeating-linear-gradient(0deg, rgba(120,100,70,.05) 0 1px, rgba(120,100,70,0) 1px 3px),
+    repeating-linear-gradient(90deg, rgba(120,100,70,.032) 0 1px, rgba(120,100,70,0) 1px 5px);
+  font-size:1rem;
+  line-height:1.85;
+}
+.container{max-width:var(--maxw);margin:0 auto;padding:2.5rem 1.5rem 1.5rem;}
+
+/* ---------- header ---------- */
+header{
+  display:flex;justify-content:space-between;align-items:center;gap:1.25rem;
+  padding-bottom:1.5rem;border-bottom:3px double var(--rule);margin-bottom:3rem;
+}
+.logo{font-size:2rem;font-weight:700;color:var(--ink);letter-spacing:.03em;line-height:1.15;}
+.logo small{font-size:.9rem;font-weight:400;color:var(--muted);display:block;letter-spacing:.01em;}
+.lang-switch button{
+  border:1px solid var(--zhe);background:var(--card);color:var(--zhe);
+  padding:.4rem .85rem;border-radius:var(--radius);cursor:pointer;margin-left:.5rem;
+  font-size:.9rem;transition:background .15s ease,color .15s ease;
+}
+.lang-switch button:hover{background:#f3e4dc;}
+.lang-switch button.active{background:var(--zhe);color:#fff;border-color:var(--zhe);}
+
+/* ---------- type ---------- */
+.zh h1,.zh h2,.zh h3{font-family:var(--serif);}
+h1{font-size:clamp(1.85rem,5vw,2.55rem);font-weight:700;line-height:1.35;letter-spacing:.04em;color:#2a2118;}
+h2{font-size:clamp(1.02rem,2.6vw,1.22rem);font-weight:400;color:var(--muted);line-height:1.7;}
+h3{font-size:1.2rem;font-weight:600;line-height:1.4;}
+p{max-width:64ch;}
+p + p{margin-top:.9rem;}
+a{color:var(--zhu);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
+a:hover{color:#7d2219;}
+:focus-visible{outline:3px solid rgba(155,45,32,.55);outline-offset:2px;}
+
+/* ---------- hero ---------- */
+.hero{text-align:center;margin:1rem 0 3.5rem;}
+.hero h2{margin:.8rem auto 2.25rem;}
+.search-wrap{display:flex;max-width:720px;margin:0 auto;gap:.6rem;}
+#nameInput{
+  flex:1;min-width:0;padding:1rem 1.15rem;font-size:1.05rem;
+  border:1px solid var(--rule);border-radius:var(--radius);background:#fffdf7;
+  transition:border-color .15s ease,box-shadow .15s ease;
+}
+#nameInput:hover{border-color:var(--zhe);}
+#nameInput:focus{border-color:var(--zhu);box-shadow:0 0 0 3px rgba(155,45,32,.15);outline:none;}
+#searchBtn{
+  padding:1rem 1.9rem;background:var(--zhu);color:#fff;border:none;
+  border-radius:var(--radius);cursor:pointer;font-size:1.05rem;font-weight:600;
+  transition:background .15s ease;
+}
+#searchBtn:hover{background:#7d2219;}
+
+/* ---------- sections ---------- */
+.section{margin:3.25rem 0;}
+.section h3{margin-bottom:1.35rem;}
+.seal{
+  display:inline-block;background:var(--zhu);color:#fff;
+  padding:.35rem .85rem;border-radius:2px;letter-spacing:.08em;
+  box-shadow:1px 1px 0 rgba(0,0,0,.14);
+}
+.section ul{margin-left:1.5rem;margin-top:.5rem;}
+.section li{margin:.4rem 0;}
+.section li::marker{color:var(--zhe);}
+.disclaimer{margin-top:1rem;color:var(--muted);font-size:.95rem;}
+
+/* ---------- api code card (dark) ---------- */
+.api-card{
+  background:var(--code-bg);border:1px solid var(--code-rule);
+  border-radius:var(--radius);margin:1rem 0;overflow:hidden;
+}
+.api-bar{
+  display:flex;align-items:center;gap:.55rem;
+  background:var(--code-bar);border-bottom:1px solid var(--code-rule);
+  padding:.55rem .9rem;
+}
+.api-dot{width:.6rem;height:.6rem;border-radius:50%;background:#5a4a37;flex:none;}
+.api-method{font-family:var(--mono);font-size:.82rem;font-weight:700;letter-spacing:.06em;color:var(--code-get);}
+.api-path{font-family:var(--mono);font-size:.82rem;color:var(--code-path);}
+.api-url{
+  font-family:var(--mono);font-size:.9rem;color:var(--code-fg);
+  padding:.95rem 1rem;overflow-x:auto;word-break:break-all;line-height:1.7;white-space:normal;
+}
+.api-url .u-get{color:var(--code-get);font-weight:700;}
+.api-url .u-path{color:var(--code-path);}
+.api-url .u-q{color:var(--code-q);}
+.api-url .u-val{color:var(--code-val);}
+pre{
+  background:var(--code-bg);border:1px solid var(--code-rule);color:var(--code-fg);
+  padding:1.1rem;border-radius:var(--radius);overflow-x:auto;
+  font-size:.9rem;line-height:1.65;font-family:var(--mono);
+}
+
+/* ---------- footer ---------- */
+footer{
+  margin-top:4.5rem;padding-top:1.75rem;border-top:3px double var(--zhe);
+  color:var(--muted);font-size:.9rem;line-height:1.9;
+}
 .hidden{display:none;}
+
+/* ---------- mobile ---------- */
+@media (max-width:640px){
+  .container{padding:1.5rem 1rem 1.25rem;}
+  header{flex-direction:column;align-items:flex-start;gap:.9rem;padding-bottom:1.25rem;margin-bottom:2rem;}
+  .logo{font-size:1.6rem;}
+  .logo small{font-size:.8rem;}
+  .lang-switch button{margin-left:0;}
+  .lang-switch button + button{margin-left:.5rem;}
+  .search-wrap{flex-direction:column;}
+  #searchBtn{width:100%;}
+  .hero{margin-bottom:2.5rem;}
+  .section{margin:2.5rem 0;}
+}
 </style>
 </head>
 <body>
@@ -52,7 +177,6 @@ footer{margin-top:4rem;padding-top:2rem;border-top:1px solid #ddd;color:#555;fon
     <h1>Chinese Ancestral Repository of Descendants</h1>
     <h2>Open Database of Chinese Genealogical Figures from Family Trees</h2>
   </div>
-
   <div class="search-wrap">
     <input id="nameInput" placeholder="输入人名检索人物" />
     <button id="searchBtn">查询</button>
@@ -61,43 +185,49 @@ footer{margin-top:4rem;padding-top:2rem;border-top:1px solid #ddd;color:#555;fon
 
 <div class="section">
 <div class="zh">
-<h3>项目介绍</h3>
+<h3><span class="seal">项目介绍</span></h3>
 <p>CARD（Chinese Ancestral Repository of Descendants，中华族裔人物资料库）是依托历代家谱史料构建的开放人物谱系数据库。</p>
 <p>哈佛大学CBDB（中国历代人物传记资料库）以正史、碑刻、文集传记为核心；CARD与其形成互补，核心原始资料为家谱，收录古往今来华人、海内外华裔谱系人物记录。</p>
 <p>本项目向公众开放：</p>
-<ul style="margin-left:1.5rem;margin-top:0.5rem;">
+<ul>
 <li>简易姓名检索：输入人名查询谱系人物档案</li>
 <li>机器可读结构化数据：人物记录支持JSON格式获取</li>
 <li>开放API：支持程序调用，面向数字人文、学术研究</li>
 </ul>
-<p style="margin-top:1rem;color:#444;font-size:0.95rem;"><strong>声明：</strong>所有记录转录自家谱古籍，内容为史料原文记载，不等于客观史实。在世人物严格遵守隐私法规，不存储未经授权的个人隐私信息。</p>
+<p class="disclaimer"><strong>声明：</strong>所有记录转录自家谱古籍，内容为史料原文记载，不等于客观史实。在世人物严格遵守隐私法规，不存储未经授权的个人隐私信息。</p>
 </div>
 
 <div class="en hidden">
-<h3>About the Project</h3>
+<h3><span class="seal">About the Project</span></h3>
 <p>CARD (Chinese Ancestral Repository of Descendants) is an open lineage database built on historical Chinese genealogies.</p>
 <p>While the China Biographical Database (CBDB) focuses on official histories, epitaphs and literary biographies, CARD serves as its complement. Our primary source is family genealogies, preserving records of historical Chinese figures and overseas Chinese descendants.</p>
 <p>Public access available:</p>
-<ul style="margin-left:1.5rem;margin-top:0.5rem;">
+<ul>
 <li>Name search: Query lineage records by personal name</li>
 <li>Machine-readable data: Each person entry available in JSON</li>
-<li>Open API: Programmatic access for digital humanities & academic research</li>
+<li>Open API: Programmatic access for digital humanities &amp; academic research</li>
 </ul>
-<p style="margin-top:1rem;color:#444;font-size:0.95rem;"><strong>Disclaimer:</strong> Records are transcribed from genealogical manuscripts. Entries reflect source texts, not absolute historical truth. For living persons, we comply with privacy laws; no unauthorized private data will be stored.</p>
+<p class="disclaimer"><strong>Disclaimer:</strong> Records are transcribed from genealogical manuscripts. Entries reflect source texts, not absolute historical truth. For living persons, we comply with privacy laws; no unauthorized private data will be stored.</p>
 </div>
 </div>
 
 <div class="section">
 <div class="zh">
-<h3>开放 API 示例</h3>
+<h3><span class="seal">开放 API 示例</span></h3>
 <p>接口范式对标 CBDB，通过 person_id 获取人物 JSON：</p>
-<div class="api-url">GET /api/person?id=100000001&o=json</div>
+<div class="api-card">
+  <div class="api-bar"><span class="api-dot"></span><span class="api-method">GET</span><span class="api-path">/api/person</span></div>
+  <div class="api-url"><span class="u-get">GET</span> <span class="u-path">/api/person</span><span class="u-q">?id=<span class="u-val">100000001</span>&amp;o=<span class="u-val">json</span></span></div>
+</div>
 <p>返回样例：</p>
 </div>
 <div class="en hidden">
-<h3>Public API Example</h3>
+<h3><span class="seal">Public API Example</span></h3>
 <p>API design follows CBDB convention. Fetch person JSON by person_id:</p>
-<div class="api-url">GET /api/person?id=100000001&o=json</div>
+<div class="api-card">
+  <div class="api-bar"><span class="api-dot"></span><span class="api-method">GET</span><span class="api-path">/api/person</span></div>
+  <div class="api-url"><span class="u-get">GET</span> <span class="u-path">/api/person</span><span class="u-q">?id=<span class="u-val">100000001</span>&amp;o=<span class="u-val">json</span></span></div>
+</div>
 <p>Sample response:</p>
 </div>
 <pre>{

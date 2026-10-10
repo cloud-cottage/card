@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CARD - Chinese Ancestral Repository of Descendants | 中华族裔人物资料库</title>
+<link rel="canonical" href="https://cardreader.top/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="CARD - Chinese Ancestral Repository of Descendants | 中华族裔人物资料库">
+<meta property="og:description" content="CARD（Chinese Ancestral Repository of Descendants，中华族裔人物资料库）是依托历代家谱史料构建的开放人物谱系数据库。">
+<meta property="og:url" content="https://cardreader.top/">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;}
+body{color:#222;background:#f8f8f6;line-height:1.6;}
+.container{max-width:1024px;margin:0 auto;padding:2rem 1rem;}
+header{display:flex;justify-content:space-between;align-items:center;padding-bottom:2rem;border-bottom:1px solid #ddd;margin-bottom:2rem;}
+.logo{font-size:2rem;font-weight:bold;color:#1a365d;}
+.logo small{font-size:1rem;font-weight:normal;color:#444;display:block;}
+.lang-switch button{border:1px solid #1a365d;background:#fff;color:#1a365d;padding:0.4rem 0.8rem;border-radius:4px;cursor:pointer;margin-left:0.5rem;}
+.lang-switch button.active{background:#1a365d;color:#fff;}
+.hero{text-align:center;margin-bottom:3rem;}
+.hero h2{font-size:1.4rem;font-weight:normal;color:#444;margin:0.6rem 0 1.8rem;}
+.search-wrap{display:flex;max-width:600px;margin:0 auto;gap:0.5rem;}
+#nameInput{flex:1;padding:0.8rem;font-size:1rem;border:1px solid #aaa;border-radius:4px;}
+#searchBtn{padding:0.8rem 1.4rem;background:#1a365d;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:1rem;}
+.section{margin:2.5rem 0;}
+.section h3{font-size:1.4rem;margin-bottom:1rem;color:#1a365d;border-left:4px solid #1a365d;padding-left:0.8rem;}
+pre{background:#222;color:#a5f3fc;padding:1rem;border-radius:6px;overflow-x:auto;font-size:0.9rem;}
+.api-url{background:#eef2f7;padding:0.8rem;border-radius:4px;font-family:monospace;margin:1rem 0;}
+footer{margin-top:4rem;padding-top:2rem;border-top:1px solid #ddd;color:#555;font-size:0.9rem;}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div class="logo">CARD
+    <small>Chinese Ancestral Repository of Descendants</small>
+  </div>
+  <div class="lang-switch">
+    <button id="btnZh" class="active">中文</button>
+    <button id="btnEn">English</button>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="zh">
+    <h1>中华族裔人物资料库</h1>
+    <h2>基于家谱史料的中华谱系人物开放数据库</h2>
+  </div>
+  <div class="en hidden">
+    <h1>Chinese Ancestral Repository of Descendants</h1>
+    <h2>Open Database of Chinese Genealogical Figures from Family Trees</h2>
+  </div>
+
+  <div class="search-wrap">
+    <input id="nameInput" placeholder="输入人名检索人物" />
+    <button id="searchBtn">查询</button>
+  </div>
+</div>
+
+<div class="section">
+<div class="zh">
+<h3>项目介绍</h3>
+<p>CARD（Chinese Ancestral Repository of Descendants，中华族裔人物资料库）是依托历代家谱史料构建的开放人物谱系数据库。</p>
+<p>哈佛大学CBDB（中国历代人物传记资料库）以正史、碑刻、文集传记为核心；CARD与其形成互补，核心原始资料为家谱，收录古往今来华人、海内外华裔谱系人物记录。</p>
+<p>本项目向公众开放：</p>
+<ul style="margin-left:1.5rem;margin-top:0.5rem;">
+<li>简易姓名检索：输入人名查询谱系人物档案</li>
+<li>机器可读结构化数据：人物记录支持JSON格式获取</li>
+<li>开放API：支持程序调用，面向数字人文、学术研究</li>
+</ul>
+<p style="margin-top:1rem;color:#444;font-size:0.95rem;"><strong>声明：</strong>所有记录转录自家谱古籍，内容为史料原文记载，不等于客观史实。在世人物严格遵守隐私法规，不存储未经授权的个人隐私信息。</p>
+</div>
+
+<div class="en hidden">
+<h3>About the Project</h3>
+<p>CARD (Chinese Ancestral Repository of Descendants) is an open lineage database built on historical Chinese genealogies.</p>
+<p>While the China Biographical Database (CBDB) focuses on official histories, epitaphs and literary biographies, CARD serves as its complement. Our primary source is family genealogies, preserving records of historical Chinese figures and overseas Chinese descendants.</p>
+<p>Public access available:</p>
+<ul style="margin-left:1.5rem;margin-top:0.5rem;">
+<li>Name search: Query lineage records by personal name</li>
+<li>Machine-readable data: Each person entry available in JSON</li>
+<li>Open API: Programmatic access for digital humanities & academic research</li>
+</ul>
+<p style="margin-top:1rem;color:#444;font-size:0.95rem;"><strong>Disclaimer:</strong> Records are transcribed from genealogical manuscripts. Entries reflect source texts, not absolute historical truth. For living persons, we comply with privacy laws; no unauthorized private data will be stored.</p>
+</div>
+</div>
+
+<div class="section">
+<div class="zh">
+<h3>开放 API 示例</h3>
+<p>接口范式对标 CBDB，通过 person_id 获取人物 JSON：</p>
+<div class="api-url">GET /api/person?id=100000001&o=json</div>
+<p>返回样例：</p>
+</div>
+<div class="en hidden">
+<h3>Public API Example</h3>
+<p>API design follows CBDB convention. Fetch person JSON by person_id:</p>
+<div class="api-url">GET /api/person?id=100000001&o=json</div>
+<p>Sample response:</p>
+</div>
+<pre>{
+  "person_id": 100000001,
+  "primary_name": "季某某",
+  "courtesy_name": "",
+  "birth": {"year": null, "place": "山东临沂"},
+  "death": {"year": null, "place": null},
+  "source_type": "genealogy",
+  "source_title": "费县季氏家谱",
+  "clan": "季氏",
+  "branch": "白露村支",
+  "migration": ["山东临沂费县"],
+  "notes": "家谱记载内容"
+}</pre>
+</div>
+
+<footer>
+<div class="zh">
+© 2026 CARD｜中华族裔人物资料库
+<br>引用规范 | API文档 | 隐私说明
+</div>
+<div class="en hidden">
+© 2026 CARD｜Chinese Ancestral Repository of Descendants
+<br>Citation Guide | API Documentation | Privacy Statement
+</div>
+</footer>
+</div>
+
+<script>
+// 双语切换
+const zhBlocks = document.querySelectorAll('.zh');
+const enBlocks = document.querySelectorAll('.en');
+const btnZh = document.getElementById('btnZh');
+const btnEn = document.getElementById('btnEn');
+
+function setLang(isZh){
+  if(isZh){
+    zhBlocks.forEach(el=>el.classList.remove('hidden'));
+    enBlocks.forEach(el=>el.classList.add('hidden'));
+    btnZh.classList.add('active');
+    btnEn.classList.remove('active');
+    document.querySelector('#nameInput').placeholder = "输入人名检索人物";
+    document.documentElement.lang = "zh-CN";
+  }else{
+    zhBlocks.forEach(el=>el.classList.add('hidden'));
+    enBlocks.forEach(el=>el.classList.remove('hidden'));
+    btnZh.classList.remove('active');
+    btnEn.classList.add('active');
+    document.querySelector('#nameInput').placeholder = "Search by name";
+    document.documentElement.lang = "en";
+  }
+}
+btnZh.onclick = ()=>setLang(true);
+btnEn.onclick = ()=>setLang(false);
+
+// 搜索提交逻辑，前端跳转（后端实现 /api/person 或 search 页面接管）
+const searchBtn = document.getElementById('searchBtn');
+const nameInput = document.getElementById('nameInput');
+function doSearch(){
+  const q = nameInput.value.trim();
+  if(!q) return;
+  // 这里是前端跳转，后端部署时改成真实检索页面地址
+  window.location.href = `/search?q=${encodeURIComponent(q)}`;
+}
+searchBtn.onclick = doSearch;
+nameInput.onkeydown = e=>{if(e.key==="Enter") doSearch();};
+</script>
+</body>
+</html>

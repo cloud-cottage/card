@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>检索 - CARD | 中华族裔人物资料库</title>
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;}
+body{color:#222;background:#f8f8f6;line-height:1.6;}
+.container{max-width:1024px;margin:0 auto;padding:2rem 1rem;}
+header{display:flex;justify-content:space-between;align-items:center;padding-bottom:2rem;border-bottom:1px solid #ddd;margin-bottom:2rem;}
+.logo{font-size:2rem;font-weight:bold;color:#1a365d;}
+.logo small{font-size:1rem;font-weight:normal;color:#444;display:block;}
+.lang-switch button{border:1px solid #1a365d;background:#fff;color:#1a365d;padding:0.4rem 0.8rem;border-radius:4px;cursor:pointer;margin-left:0.5rem;}
+.lang-switch button.active{background:#1a365d;color:#fff;}
+.hero{text-align:center;margin-bottom:3rem;}
+.hero h2{font-size:1.4rem;font-weight:normal;color:#444;margin:0.6rem 0 1.8rem;}
+.section{margin:2.5rem 0;}
+.section h3{font-size:1.4rem;margin-bottom:1rem;color:#1a365d;border-left:4px solid #1a365d;padding-left:0.8rem;}
+.note{background:#eef2f7;padding:1rem;border-radius:4px;color:#444;}
+footer{margin-top:4rem;padding-top:2rem;border-top:1px solid #ddd;color:#555;font-size:0.9rem;}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div class="logo">CARD
+    <small>Chinese Ancestral Repository of Descendants</small>
+  </div>
+  <div class="lang-switch">
+    <button id="btnZh" class="active">中文</button>
+    <button id="btnEn">English</button>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="zh">
+    <h1>检索功能建设中</h1>
+    <h2>Search is under construction</h2>
+  </div>
+  <div class="en hidden">
+    <h1>Search is under construction</h1>
+    <h2>检索功能建设中</h2>
+  </div>
+</div>
+
+<div class="section">
+<div class="zh">
+<h3>说明</h3>
+<p class="note">检索功能建设中。</p>
+<p style="margin-top:1rem;"><a href="/">返回首页</a></p>
+</div>
+<div class="en hidden">
+<h3>Notice</h3>
+<p class="note">Search is under construction.</p>
+<p style="margin-top:1rem;"><a href="/">Back to home</a></p>
+</div>
+</div>
+
+<footer>
+<div class="zh">
+© 2026 CARD｜中华族裔人物资料库
+<br>引用规范 | API文档 | 隐私说明
+</div>
+<div class="en hidden">
+© 2026 CARD｜Chinese Ancestral Repository of Descendants
+<br>Citation Guide | API Documentation | Privacy Statement
+</div>
+</footer>
+</div>
+
+<script>
+const zhBlocks = document.querySelectorAll('.zh');
+const enBlocks = document.querySelectorAll('.en');
+const btnZh = document.getElementById('btnZh');
+const btnEn = document.getElementById('btnEn');
+
+function setLang(isZh){
+  if(isZh){
+    zhBlocks.forEach(el=>el.classList.remove('hidden'));
+    enBlocks.forEach(el=>el.classList.add('hidden'));
+    btnZh.classList.add('active');
+    btnEn.classList.remove('active');
+    document.documentElement.lang = "zh-CN";
+  }else{
+    zhBlocks.forEach(el=>el.classList.add('hidden'));
+    enBlocks.forEach(el=>el.classList.remove('hidden'));
+    btnZh.classList.remove('active');
+    btnEn.classList.add('active');
+    document.documentElement.lang = "en";
+  }
+}
+btnZh.onclick = ()=>setLang(true);
+btnEn.onclick = ()=>setLang(false);
+</script>
+</body>
+</html>

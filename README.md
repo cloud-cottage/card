@@ -20,6 +20,12 @@
 ├── sitemap.xml         # 站点地图（仅首页）
 ├── search/
 │   └── index.html      # 检索占位页（中英双语）
+├── citation/
+│   └── index.html      # 引用规范页（中英双语，页脚「引用规范」落地页）
+├── api-docs/
+│   └── index.html      # API 文档页（中英双语，页脚「API文档」落地页）
+├── privacy/
+│   └── index.html      # 隐私说明页（中英双语，页脚「隐私说明」落地页）
 ├── README.md
 └── .gitignore
 ```
@@ -54,7 +60,6 @@ cd /Users/kevin/bistro/card && python3 -m http.server 8080
 - favicon：未提供。
 - 检索页实际实现：待实现（当前为静态占位页）。
 - 开放 API：待实现（首页示例为占位）。
-- 引用规范与隐私说明页：待补充（页脚三链接当前为纯文本，暂无落地页）。
 - 检索页未按 q 参数做任何处理（仍为静态占位）。
 
 ## 视觉规范

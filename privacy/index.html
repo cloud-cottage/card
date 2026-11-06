@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>隐私说明 - CARD | 中华族裔人物资料库</title>
+<link rel="canonical" href="https://cardreader.top/privacy/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="隐私说明 - CARD | 中华族裔人物资料库">
+<meta property="og:description" content="收录范围：CARD 仅收录已故人物，在世人物不入库；本站不存储在世人物的个人隐私信息。">
+<meta property="og:url" content="https://cardreader.top/privacy/">
+<style>
+:root{
+  --paper:#f4eddd;
+  --paper-2:#efe6d2;
+  --card:#fbf7ec;
+  --ink:#1a365d;
+  --text:#242424;
+  --muted:#5a5346;
+  --zhu:#9b2d20;
+  --zhe:#a0432f;
+  --rule:#cbbfa4;
+  --maxw:980px;
+  --radius:3px;
+  --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC","SimSun",serif;
+  --sans:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --mono:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --code-bg:#241d16;
+  --code-bar:#332a20;
+  --code-rule:#4a3d2e;
+  --code-fg:#e8d3a9;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  font-family:var(--sans);
+  color:var(--text);
+  background-color:var(--paper);
+  background-image:
+    radial-gradient(circle at 12% 16%, rgba(160,67,47,.055) 0, rgba(160,67,47,0) 42%),
+    radial-gradient(circle at 86% 78%, rgba(155,45,32,.045) 0, rgba(155,45,32,0) 40%),
+    repeating-linear-gradient(0deg, rgba(120,100,70,.05) 0 1px, rgba(120,100,70,0) 1px 3px),
+    repeating-linear-gradient(90deg, rgba(120,100,70,.032) 0 1px, rgba(120,100,70,0) 1px 5px);
+  font-size:1rem;
+  line-height:1.85;
+}
+.container{max-width:var(--maxw);margin:0 auto;padding:2.5rem 1.5rem 1.5rem;}
+
+/* ---------- header ---------- */
+header{
+  display:flex;justify-content:space-between;align-items:center;gap:1.25rem;
+  padding-bottom:1.5rem;border-bottom:3px double var(--rule);margin-bottom:1.5rem;
+}
+.logo{font-size:2rem;font-weight:700;color:var(--ink);letter-spacing:.03em;line-height:1.15;}
+.logo small{font-size:.9rem;font-weight:400;color:var(--muted);display:block;letter-spacing:.01em;}
+.lang-switch button{
+  border:1px solid var(--zhe);background:var(--card);color:var(--zhe);
+  padding:.4rem .85rem;border-radius:var(--radius);cursor:pointer;margin-left:.5rem;
+  font-size:.9rem;transition:background .15s ease,color .15s ease;
+}
+.lang-switch button:hover{background:#f3e4dc;}
+.lang-switch button.active{background:var(--zhe);color:#fff;border-color:var(--zhe);}
+
+/* ---------- back link ---------- */
+.back-link{margin-bottom:2.5rem;font-size:.95rem;}
+.back-link a{color:var(--zhu);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
+.back-link a:hover{color:#7d2219;}
+
+/* ---------- type ---------- */
+.zh h1,.zh h2,.zh h3{font-family:var(--serif);}
+h1{font-size:clamp(1.85rem,5vw,2.55rem);font-weight:700;line-height:1.35;letter-spacing:.04em;color:#2a2118;margin-bottom:1.75rem;}
+h2{font-size:clamp(1.02rem,2.6vw,1.22rem);font-weight:400;color:var(--muted);line-height:1.7;}
+h3{font-size:1.2rem;font-weight:600;line-height:1.4;}
+p{max-width:64ch;}
+a{color:var(--zhu);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
+a:hover{color:#7d2219;}
+:focus-visible{outline:3px solid rgba(155,45,32,.55);outline-offset:2px;}
+
+/* ---------- section ---------- */
+.doc{margin:0 0 1rem;}
+.doc h1{margin-bottom:1.75rem;}
+.doc p{margin-top:.95rem;}
+.doc h1 + p{margin-top:0;}
+.doc ul{margin:1rem 0 1rem 1.5rem;}
+.doc li{margin:.4rem 0;}
+.doc li::marker{color:var(--zhe);}
+.seal{
+  display:inline-block;background:var(--zhu);color:#fff;
+  padding:.35rem .85rem;border-radius:2px;letter-spacing:.08em;
+  box-shadow:1px 1px 0 rgba(0,0,0,.14);
+}
+h1 .seal{
+  font-size:clamp(1.35rem,4.2vw,1.95rem);
+  padding:.5rem 1.15rem;letter-spacing:.1em;
+}
+
+/* ---------- code & tables ---------- */
+code{
+  font-family:var(--mono);font-size:.92em;
+  background:rgba(155,45,32,.07);border-radius:2px;padding:.08em .3em;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--code-rule);color:var(--code-fg);
+  padding:1.1rem;border-radius:var(--radius);overflow-x:auto;
+  font-size:.9rem;line-height:1.65;font-family:var(--mono);
+  max-width:100%;
+}
+pre code{background:none;padding:0;font-size:inherit;color:inherit;}
+table{
+  width:100%;max-width:100%;border-collapse:collapse;
+  margin:1.1rem 0;font-size:.95rem;line-height:1.7;
+}
+th,td{
+  border:1px solid var(--rule);padding:.55rem .75rem;
+  text-align:left;vertical-align:top;
+  word-break:break-word;overflow-wrap:anywhere;
+}
+th{background:var(--paper-2);font-weight:600;color:#2a2118;white-space:normal;}
+td{background:var(--card);}
+
+/* ---------- footer ---------- */
+footer{
+  margin-top:4.5rem;padding-top:1.75rem;border-top:3px double var(--zhe);
+  color:var(--muted);font-size:.9rem;line-height:1.9;
+}
+.hidden{display:none;}
+
+/* ---------- mobile ---------- */
+@media (max-width:640px){
+  .container{padding:1.5rem 1rem 1.25rem;}
+  header{flex-direction:column;align-items:flex-start;gap:.9rem;padding-bottom:1.25rem;margin-bottom:1.25rem;}
+  .logo{font-size:1.6rem;}
+  .logo small{font-size:.8rem;}
+  .lang-switch button{margin-left:0;}
+  .lang-switch button + button{margin-left:.5rem;}
+  .back-link{margin-bottom:1.75rem;}
+  h1{margin-bottom:1.35rem;}
+  h1 .seal{padding:.42rem .95rem;}
+  table{font-size:.9rem;}
+  th,td{padding:.45rem .55rem;}
+  pre{padding:.85rem;font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div class="logo">CARD
+    <small>Chinese Ancestral Repository of Descendants</small>
+  </div>
+  <div class="lang-switch">
+    <button id="btnZh" class="active">中文</button>
+    <button id="btnEn">English</button>
+  </div>
+</header>
+
+<p class="back-link"><a href="/">← 返回首页 / Back to home</a></p>
+
+<div class="doc">
+<div class="zh">
+<h1><span class="seal">隐私说明</span></h1>
+<p><strong>收录范围</strong>：CARD 仅收录已故人物，在世人物不入库；本站不存储在世人物的个人隐私信息。</p>
+<p><strong>数据来源</strong>：历代家谱与谱牒文献的转录。所有记录转录自家谱古籍，内容为史料原文记载，不等于客观史实。</p>
+<p><strong>关于访问本站的人</strong>：本站不设用户账号，也不要求访问者提供任何个人信息。本站为纯静态站点，当前不使用 Cookie，也不接入第三方统计、广告或追踪服务。托管方的服务器访问日志会按运维与安全需要保留，用于故障排查与安全防护；日志保留期限目前未定，本页不作具体承诺。</p>
+<p><strong>异议、更正与删除</strong>：若家属、后人或相关权利人认为某条记录涉及不应公开的个人信息，可通过 <code>8236389@qq.com</code> 提出异议。收到后我们将核对源谱记载与收录情况，视情节更正、补充说明或删除该记录。</p>
+<p><strong>法律与免责</strong>：本站遵守适用的个人信息保护法律法规。CARD 条目为史料转录，不等于客观史实，亦不保证完整、准确；如与原始谱书有出入，以谱书原文为准，并欢迎来函更正。</p>
+</div>
+
+<div class="en hidden">
+<h1><span class="seal">Privacy Statement</span></h1>
+<p><strong>Scope of inclusion</strong>: CARD records deceased persons only; living persons are not included, and no personal information about living persons is stored on this site.</p>
+<p><strong>Sources of data</strong>: transcriptions of historical Chinese genealogies and lineage literature. All entries are transcribed from genealogical manuscripts; they reflect what the source text records, not absolute historical truth.</p>
+<p><strong>About visitors to this site</strong>: The site has no user accounts and does not ask visitors to provide any personal information. This is a purely static site. It currently sets no cookies and uses no third-party analytics, advertising or tracking. Server access logs kept by the hosting provider are retained as needed for operations and security, for troubleshooting and protection against abuse; the retention period is not yet defined and no specific commitment is made here.</p>
+<p><strong>Objections, corrections and deletions</strong>: if family members, descendants or other interested rights holders believe a record contains personal information that should not be public, they may raise an objection at <code>8236389@qq.com</code>. On receipt we will check the genealogical source and the record's status, and will correct, annotate or delete the record as appropriate.</p>
+<p><strong>Legal compliance and disclaimer</strong>: this site complies with applicable personal information protection laws and regulations. CARD entries are transcriptions of historical sources, do not constitute verified historical fact, and are not guaranteed complete or accurate; Where a record differs from the original genealogy, the genealogy text governs; corrections are welcome.</p>
+</div>
+</div>
+
+<footer>
+<div class="zh">
+© 2026 CARD｜中华族裔人物资料库
+<br><a href="/citation/">引用规范</a> | <a href="/api-docs/">API文档</a> | <a href="/privacy/">隐私说明</a>
+</div>
+<div class="en hidden">
+© 2026 CARD｜Chinese Ancestral Repository of Descendants
+<br><a href="/citation/">Citation Guide</a> | <a href="/api-docs/">API Documentation</a> | <a href="/privacy/">Privacy Statement</a>
+</div>
+</footer>
+</div>
+
+<script>
+// 双语切换
+const zhBlocks = document.querySelectorAll('.zh');
+const enBlocks = document.querySelectorAll('.en');
+const btnZh = document.getElementById('btnZh');
+const btnEn = document.getElementById('btnEn');
+
+function setLang(isZh){
+  if(isZh){
+    zhBlocks.forEach(el=>el.classList.remove('hidden'));
+    enBlocks.forEach(el=>el.classList.add('hidden'));
+    btnZh.classList.add('active');
+    btnEn.classList.remove('active');
+    document.documentElement.lang = "zh-CN";
+  }else{
+    zhBlocks.forEach(el=>el.classList.add('hidden'));
+    enBlocks.forEach(el=>el.classList.remove('hidden'));
+    btnZh.classList.remove('active');
+    btnEn.classList.add('active');
+    document.documentElement.lang = "en";
+  }
+}
+btnZh.onclick = ()=>setLang(true);
+btnEn.onclick = ()=>setLang(false);
+</script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>引用规范 - CARD | 中华族裔人物资料库</title>
+<link rel="canonical" href="https://cardreader.top/citation/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="引用规范 - CARD | 中华族裔人物资料库">
+<meta property="og:description" content="CARD 的引用单位是单条人物记录，唯一键为 person_id——九位数字，例如 100000001。">
+<meta property="og:url" content="https://cardreader.top/citation/">
+<style>
+:root{
+  --paper:#f4eddd;
+  --paper-2:#efe6d2;
+  --card:#fbf7ec;
+  --ink:#1a365d;
+  --text:#242424;
+  --muted:#5a5346;
+  --zhu:#9b2d20;
+  --zhe:#a0432f;
+  --rule:#cbbfa4;
+  --maxw:980px;
+  --radius:3px;
+  --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC","SimSun",serif;
+  --sans:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --mono:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --code-bg:#241d16;
+  --code-bar:#332a20;
+  --code-rule:#4a3d2e;
+  --code-fg:#e8d3a9;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  font-family:var(--sans);
+  color:var(--text);
+  background-color:var(--paper);
+  background-image:
+    radial-gradient(circle at 12% 16%, rgba(160,67,47,.055) 0, rgba(160,67,47,0) 42%),
+    radial-gradient(circle at 86% 78%, rgba(155,45,32,.045) 0, rgba(155,45,32,0) 40%),
+    repeating-linear-gradient(0deg, rgba(120,100,70,.05) 0 1px, rgba(120,100,70,0) 1px 3px),
+    repeating-linear-gradient(90deg, rgba(120,100,70,.032) 0 1px, rgba(120,100,70,0) 1px 5px);
+  font-size:1rem;
+  line-height:1.85;
+}
+.container{max-width:var(--maxw);margin:0 auto;padding:2.5rem 1.5rem 1.5rem;}
+
+/* ---------- header ---------- */
+header{
+  display:flex;justify-content:space-between;align-items:center;gap:1.25rem;
+  padding-bottom:1.5rem;border-bottom:3px double var(--rule);margin-bottom:1.5rem;
+}
+.logo{font-size:2rem;font-weight:700;color:var(--ink);letter-spacing:.03em;line-height:1.15;}
+.logo small{font-size:.9rem;font-weight:400;color:var(--muted);display:block;letter-spacing:.01em;}
+.lang-switch button{
+  border:1px solid var(--zhe);background:var(--card);color:var(--zhe);
+  padding:.4rem .85rem;border-radius:var(--radius);cursor:pointer;margin-left:.5rem;
+  font-size:.9rem;transition:background .15s ease,color .15s ease;
+}
+.lang-switch button:hover{background:#f3e4dc;}
+.lang-switch button.active{background:var(--zhe);color:#fff;border-color:var(--zhe);}
+
+/* ---------- back link ---------- */
+.back-link{margin-bottom:2.5rem;font-size:.95rem;}
+.back-link a{color:var(--zhu);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
+.back-link a:hover{color:#7d2219;}
+
+/* ---------- type ---------- */
+.zh h1,.zh h2,.zh h3{font-family:var(--serif);}
+h1{font-size:clamp(1.85rem,5vw,2.55rem);font-weight:700;line-height:1.35;letter-spacing:.04em;color:#2a2118;margin-bottom:1.75rem;}
+h2{font-size:clamp(1.02rem,2.6vw,1.22rem);font-weight:400;color:var(--muted);line-height:1.7;}
+h3{font-size:1.2rem;font-weight:600;line-height:1.4;}
+p{max-width:64ch;}
+a{color:var(--zhu);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
+a:hover{color:#7d2219;}
+:focus-visible{outline:3px solid rgba(155,45,32,.55);outline-offset:2px;}
+
+/* ---------- section ---------- */
+.doc{margin:0 0 1rem;}
+.doc h1{margin-bottom:1.75rem;}
+.doc p{margin-top:.95rem;}
+.doc h1 + p{margin-top:0;}
+.doc ul{margin:1rem 0 1rem 1.5rem;}
+.doc li{margin:.4rem 0;}
+.doc li::marker{color:var(--zhe);}
+.seal{
+  display:inline-block;background:var(--zhu);color:#fff;
+  padding:.35rem .85rem;border-radius:2px;letter-spacing:.08em;
+  box-shadow:1px 1px 0 rgba(0,0,0,.14);
+}
+h1 .seal{
+  font-size:clamp(1.35rem,4.2vw,1.95rem);
+  padding:.5rem 1.15rem;letter-spacing:.1em;
+}
+
+/* ---------- code & tables ---------- */
+code{
+  font-family:var(--mono);font-size:.92em;
+  background:rgba(155,45,32,.07);border-radius:2px;padding:.08em .3em;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--code-rule);color:var(--code-fg);
+  padding:1.1rem;border-radius:var(--radius);overflow-x:auto;
+  font-size:.9rem;line-height:1.65;font-family:var(--mono);
+  max-width:100%;
+}
+pre code{background:none;padding:0;font-size:inherit;color:inherit;}
+table{
+  width:100%;max-width:100%;border-collapse:collapse;
+  margin:1.1rem 0;font-size:.95rem;line-height:1.7;
+}
+th,td{
+  border:1px solid var(--rule);padding:.55rem .75rem;
+  text-align:left;vertical-align:top;
+  word-break:break-word;overflow-wrap:anywhere;
+}
+th{background:var(--paper-2);font-weight:600;color:#2a2118;white-space:normal;}
+td{background:var(--card);}
+
+/* ---------- footer ---------- */
+footer{
+  margin-top:4.5rem;padding-top:1.75rem;border-top:3px double var(--zhe);
+  color:var(--muted);font-size:.9rem;line-height:1.9;
+}
+.hidden{display:none;}
+
+/* ---------- mobile ---------- */
+@media (max-width:640px){
+  .container{padding:1.5rem 1rem 1.25rem;}
+  header{flex-direction:column;align-items:flex-start;gap:.9rem;padding-bottom:1.25rem;margin-bottom:1.25rem;}
+  .logo{font-size:1.6rem;}
+  .logo small{font-size:.8rem;}
+  .lang-switch button{margin-left:0;}
+  .lang-switch button + button{margin-left:.5rem;}
+  .back-link{margin-bottom:1.75rem;}
+  h1{margin-bottom:1.35rem;}
+  h1 .seal{padding:.42rem .95rem;}
+  table{font-size:.9rem;}
+  th,td{padding:.45rem .55rem;}
+  pre{padding:.85rem;font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div class="logo">CARD
+    <small>Chinese Ancestral Repository of Descendants</small>
+  </div>
+  <div class="lang-switch">
+    <button id="btnZh" class="active">中文</button>
+    <button id="btnEn">English</button>
+  </div>
+</header>
+
+<p class="back-link"><a href="/">← 返回首页 / Back to home</a></p>
+
+<div class="doc">
+<div class="zh">
+<h1><span class="seal">引用规范</span></h1>
+<p>CARD 的引用单位是单条人物记录，唯一键为 <code>person_id</code>——九位数字，例如 <code>100000001</code>。引用一条记录时，除 <code>person_id</code> 外，必须同时给出源谱书名（<code>source_title</code>）与支系（<code>branch</code>）：同名人物散见于多部家谱，缺了这两项，读者无法回溯原文。</p>
+<p>中文引用模板（可照抄，替换尖括号内容）：</p>
+<pre><code>&lt;作者/编者，若无则删去&gt;：《谱名》（支系），&lt;卷/页，若无则删去&gt;，CARD（中华族裔人物资料库），条目编号 &lt;person_id&gt;，https://cardreader.top/，访问日期 &lt;YYYY-MM-DD&gt;。</code></pre>
+<p>示范（谱名、支系、编号取自本站首页示例）：</p>
+<pre><code>《费县季氏家谱》（白露村支），CARD（中华族裔人物资料库），条目编号 100000001，https://cardreader.top/，访问日期 &lt;YYYY-MM-DD&gt;。</code></pre>
+<p>引用时须注明其史料性质：CARD 所有记录转录自家谱古籍，内容为史料原文记载，不等于客观史实。行文应写作「家谱原文记载」，而非直接断言史实。CARD 条目是检索与转引的入口，不能替代原始谱书；正式引证仍须回到谱书原文核对。</p>
+<p>批量取用或经 API 使用时，除上述各项外，还应注明数据集名称与取用日期；数据集版本号口径尚未确定，暂以取用日期标识所用数据。CARD 数据仅限<strong>非商业的公益与学术研究</strong>用途；商业使用须事先取得书面许可（联系：8236389@qq.com）。</p>
+</div>
+
+<div class="en hidden">
+<h1><span class="seal">Citation Guide</span></h1>
+<p>CARD's unit of citation is a single person record, keyed by <code>person_id</code> — a nine-digit number, e.g. <code>100000001</code>. When citing a record, always supply <code>person_id</code> together with the source genealogy title (<code>source_title</code>) and the branch (<code>branch</code>). Namesakes occur across multiple genealogies; without those two fields a reader cannot trace the entry back to its source.</p>
+<p>English citation template (copy as-is, replace the angle-bracket placeholders):</p>
+<pre><code>&lt;Author/Editor&gt;, &lt;Title of the genealogy&gt; (&lt;Branch&gt;), &lt;vol./page, delete if not applicable&gt;, CARD (Chinese Ancestral Repository of Descendants), entry &lt;person_id&gt;, https://cardreader.top/, accessed &lt;YYYY-MM-DD&gt;.</code></pre>
+<p>Chinese titles and branch names are kept in characters here; a romanization scheme is not yet decided.</p>
+<p>Worked example (title, branch and ID taken from this site's home page):</p>
+<pre><code>&lt;Author/Editor&gt;, 《费县季氏家谱》（白露村支）, CARD (Chinese Ancestral Repository of Descendants), entry 100000001, https://cardreader.top/, accessed &lt;YYYY-MM-DD&gt;.</code></pre>
+<p>Citations should state the evidentiary status of the record: all CARD entries are transcribed from genealogical manuscripts; they reflect what the source text records, not absolute historical truth. Write "as recorded in the genealogy" rather than asserting a fact. A CARD entry is an index for retrieval and cross-reference, not a substitute for the original genealogy; formal citation should still be checked against the genealogy itself.</p>
+<p>For bulk use or programmatic access, also name the dataset and the date of retrieval. Dataset versioning is not yet defined, so the retrieval date is what identifies the data used. CARD data may be used for <strong>non-commercial public-interest and academic research</strong> only; commercial use requires prior written permission (contact: 8236389@qq.com).</p>
+</div>
+</div>
+
+<footer>
+<div class="zh">
+© 2026 CARD｜中华族裔人物资料库
+<br><a href="/citation/">引用规范</a> | <a href="/api-docs/">API文档</a> | <a href="/privacy/">隐私说明</a>
+</div>
+<div class="en hidden">
+© 2026 CARD｜Chinese Ancestral Repository of Descendants
+<br><a href="/citation/">Citation Guide</a> | <a href="/api-docs/">API Documentation</a> | <a href="/privacy/">Privacy Statement</a>
+</div>
+</footer>
+</div>
+
+<script>
+// 双语切换
+const zhBlocks = document.querySelectorAll('.zh');
+const enBlocks = document.querySelectorAll('.en');
+const btnZh = document.getElementById('btnZh');
+const btnEn = document.getElementById('btnEn');
+
+function setLang(isZh){
+  if(isZh){
+    zhBlocks.forEach(el=>el.classList.remove('hidden'));
+    enBlocks.forEach(el=>el.classList.add('hidden'));
+    btnZh.classList.add('active');
+    btnEn.classList.remove('active');
+    document.documentElement.lang = "zh-CN";
+  }else{
+    zhBlocks.forEach(el=>el.classList.add('hidden'));
+    enBlocks.forEach(el=>el.classList.remove('hidden'));
+    btnZh.classList.remove('active');
+    btnEn.classList.add('active');
+    document.documentElement.lang = "en";
+  }
+}
+btnZh.onclick = ()=>setLang(true);
+btnEn.onclick = ()=>setLang(false);
+</script>
+</body>
+</html>

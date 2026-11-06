@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>页面不存在 | Page not found - CARD</title>
+<meta name="robots" content="noindex">
+<style>
+:root{
+  --paper:#f4eddd;
+  --card:#fbf7ec;
+  --ink:#1a365d;
+  --text:#242424;
+  --muted:#5a5346;
+  --zhu:#9b2d20;
+  --zhe:#a0432f;
+  --rule:#cbbfa4;
+  --maxw:980px;
+  --radius:3px;
+  --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC","SimSun",serif;
+  --sans:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  font-family:var(--sans);
+  color:var(--text);
+  background-color:var(--paper);
+  background-image:
+    radial-gradient(circle at 12% 16%, rgba(160,67,47,.055) 0, rgba(160,67,47,0) 42%),
+    radial-gradient(circle at 86% 78%, rgba(155,45,32,.045) 0, rgba(155,45,32,0) 40%),
+    repeating-linear-gradient(0deg, rgba(120,100,70,.05) 0 1px, rgba(120,100,70,0) 1px 3px),
+    repeating-linear-gradient(90deg, rgba(120,100,70,.032) 0 1px, rgba(120,100,70,0) 1px 5px);
+  font-size:1rem;
+  line-height:1.85;
+}
+.container{max-width:var(--maxw);margin:0 auto;padding:2.5rem 1.5rem 1.5rem;min-height:100vh;display:flex;flex-direction:column;}
+
+header{
+  display:flex;justify-content:space-between;align-items:center;gap:1.25rem;
+  padding-bottom:1.5rem;border-bottom:3px double var(--rule);margin-bottom:3rem;
+}
+.logo{font-size:2rem;font-weight:700;color:var(--ink);letter-spacing:.03em;line-height:1.15;}
+.logo small{font-size:.9rem;font-weight:400;color:var(--muted);display:block;letter-spacing:.01em;}
+.lang-switch button{
+  border:1px solid var(--zhe);background:var(--card);color:var(--zhe);
+  padding:.4rem .85rem;border-radius:var(--radius);cursor:pointer;margin-left:.5rem;
+  font-size:.9rem;transition:background .15s ease,color .15s ease;
+}
+.lang-switch button:hover{background:#f3e4dc;}
+.lang-switch button.active{background:var(--zhe);color:#fff;border-color:var(--zhe);}
+
+main{flex:1;text-align:center;padding:1rem 0 2.5rem;}
+.zh h1,.zh h2{font-family:var(--serif);}
+h1{font-size:clamp(1.85rem,5vw,2.55rem);font-weight:700;line-height:1.35;letter-spacing:.04em;color:#2a2118;}
+h2{font-size:clamp(1.02rem,2.6vw,1.22rem);font-weight:400;color:var(--muted);line-height:1.7;margin:.8rem auto 2.25rem;max-width:64ch;}
+a{color:var(--zhu);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
+a:hover{color:#7d2219;}
+:focus-visible{outline:3px solid rgba(155,45,32,.55);outline-offset:2px;}
+.back{
+  display:inline-block;padding:.85rem 1.9rem;background:var(--zhu);color:#fff;
+  border:none;border-radius:var(--radius);font-size:1.05rem;font-weight:600;
+  text-decoration:none;transition:background .15s ease;
+}
+.back:hover{background:#7d2219;color:#fff;}
+
+footer{
+  margin-top:auto;padding-top:1.75rem;border-top:3px double var(--zhe);
+  color:var(--muted);font-size:.9rem;line-height:1.9;
+}
+.hidden{display:none;}
+
+@media (max-width:640px){
+  .container{padding:1.5rem 1rem 1.25rem;}
+  header{flex-direction:column;align-items:flex-start;gap:.9rem;padding-bottom:1.25rem;margin-bottom:2rem;}
+  .logo{font-size:1.6rem;}
+  .logo small{font-size:.8rem;}
+  .lang-switch button{margin-left:0;}
+  .lang-switch button + button{margin-left:.5rem;}
+  main{padding-top:.5rem;}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div class="logo">CARD
+    <small>Chinese Ancestral Repository of Descendants</small>
+  </div>
+  <div class="lang-switch">
+    <button id="btnZh" class="active">中文</button>
+    <button id="btnEn">English</button>
+  </div>
+</header>
+
+<main>
+  <div class="zh">
+    <h1>页面不存在</h1>
+    <h2>该地址没有对应内容。</h2>
+    <a class="back" href="/">返回首页</a>
+  </div>
+  <div class="en hidden">
+    <h1>Page not found</h1>
+    <h2>There is nothing at this address.</h2>
+    <a class="back" href="/">Back to home</a>
+  </div>
+</main>
+
+<footer>
+<div class="zh">
+© 2026 CARD｜中华族裔人物资料库
+<br>引用规范 | API文档 | 隐私说明
+</div>
+<div class="en hidden">
+© 2026 CARD｜Chinese Ancestral Repository of Descendants
+<br>Citation Guide | API Documentation | Privacy Statement
+</div>
+</footer>
+</div>
+
+<script>
+const zhBlocks = document.querySelectorAll('.zh');
+const enBlocks = document.querySelectorAll('.en');
+const btnZh = document.getElementById('btnZh');
+const btnEn = document.getElementById('btnEn');
+
+function setLang(isZh){
+  if(isZh){
+    zhBlocks.forEach(el=>el.classList.remove('hidden'));
+    enBlocks.forEach(el=>el.classList.add('hidden'));
+    btnZh.classList.add('active');
+    btnEn.classList.remove('active');
+    document.documentElement.lang = "zh-CN";
+  }else{
+    zhBlocks.forEach(el=>el.classList.add('hidden'));
+    enBlocks.forEach(el=>el.classList.remove('hidden'));
+    btnZh.classList.remove('active');
+    btnEn.classList.add('active');
+    document.documentElement.lang = "en";
+  }
+}
+btnZh.onclick = ()=>setLang(true);
+btnEn.onclick = ()=>setLang(false);
+</script>
+</body>
+</html>

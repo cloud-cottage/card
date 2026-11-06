@@ -15,6 +15,9 @@
 ```
 .
 ├── index.html          # 首页（中英双语，默认中文）
+├── 404.html            # 自定义 404 页（中英双语，noindex）
+├── robots.txt          # 爬虫规则（全站允许 + sitemap 指针）
+├── sitemap.xml         # 站点地图（仅首页）
 ├── search/
 │   └── index.html      # 检索占位页（中英双语）
 ├── README.md

@@ -1,0 +1,15 @@
+{
+ "version": 1,
+ "tags": [
+  {
+   "code": "yinren",
+   "label": "印人",
+   "description": "篆刻創作者（刻印之人）"
+  },
+  {
+   "code": "cangjia",
+   "label": "藏家",
+   "description": "印章收藏者（印主）"
+  }
+ ]
+}

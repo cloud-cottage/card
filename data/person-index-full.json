@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-13T05:35:14.198Z",
+ "generated_at": "2026-11-13T22:21:30.336Z",
  "count": 573,
  "rows": [
   {
@@ -495,7 +495,7 @@
    "courtesy_name": "德生",
    "art_name": "心潛",
    "zhaihao": "心潛書屋",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -776,7 +776,7 @@
    "courtesy_name": "受言",
    "art_name": "壽巖",
    "zhaihao": "述古堂",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -795,7 +795,7 @@
    "courtesy_name": "",
    "art_name": "謹原",
    "zhaihao": "",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -1276,9 +1276,9 @@
   },
   {
    "person_id": "100000073",
-   "name": "丁彥臣",
-   "family_name": "丁",
-   "given_name": "彥臣",
+   "name": "吴颐人",
+   "family_name": "吴",
+   "given_name": "颐人",
    "courtesy_name": "筱農",
    "art_name": "雙劍閣主",
    "zhaihao": "梅花草盦",
@@ -1977,7 +1977,7 @@
    "courtesy_name": "云美",
    "art_name": "小嵐",
    "zhaihao": "塔影園",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -2011,7 +2011,7 @@
    "courtesy_name": "箊亭",
    "art_name": "舊雨",
    "zhaihao": "質經堂",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -2027,7 +2027,7 @@
    "courtesy_name": "桂亭",
    "art_name": "文石",
    "zhaihao": "石隱山房",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -2092,7 +2092,7 @@
    "courtesy_name": "幼安",
    "art_name": "次孫",
    "zhaihao": "愛吾鼎齋",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -2195,7 +2195,7 @@
    "courtesy_name": "師韓",
    "art_name": "葭汀",
    "zhaihao": "",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -2489,7 +2489,7 @@
    "courtesy_name": "經遠",
    "art_name": "",
    "zhaihao": "",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -2540,7 +2540,7 @@
    "courtesy_name": "實紫",
    "art_name": "",
    "zhaihao": "",
-   "dynasty": "",
+   "dynasty": "明",
    "tags": [
     "印人"
    ],
@@ -2590,7 +2590,7 @@
    "courtesy_name": "仰甫",
    "art_name": "庸齋",
    "zhaihao": "",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -3402,7 +3402,7 @@
    "courtesy_name": "吉人",
    "art_name": "鳯山",
    "zhaihao": "心賞齋",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -3495,7 +3495,7 @@
    "courtesy_name": "維之",
    "art_name": "抱璞主人",
    "zhaihao": "晉銅鼓齋",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -3527,7 +3527,7 @@
    "courtesy_name": "官雲",
    "art_name": "沛堂",
    "zhaihao": "",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -4179,7 +4179,7 @@
    "courtesy_name": "豹文",
    "art_name": "白洋山人",
    "zhaihao": "",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -4195,7 +4195,7 @@
    "courtesy_name": "徵父",
    "art_name": "",
    "zhaihao": "",
-   "dynasty": "",
+   "dynasty": "明",
    "tags": [
     "印人"
    ],
@@ -4537,7 +4537,7 @@
    "courtesy_name": "穀臣",
    "art_name": "老桐",
    "zhaihao": "",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -5139,7 +5139,7 @@
    "courtesy_name": "子言",
    "art_name": "芝房",
    "zhaihao": "",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -5252,7 +5252,7 @@
    "courtesy_name": "學周",
    "art_name": "",
    "zhaihao": "礪齋",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -5454,7 +5454,7 @@
    "courtesy_name": "東白",
    "art_name": "",
    "zhaihao": "",
-   "dynasty": "",
+   "dynasty": "明",
    "tags": [
     "印人"
    ],
@@ -5865,7 +5865,7 @@
    "courtesy_name": "梅崖",
    "art_name": "梅崖居士",
    "zhaihao": "槑岩精廬",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -6033,7 +6033,7 @@
    "courtesy_name": "星垣",
    "art_name": "璛瑅",
    "zhaihao": "翔鶴山房",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -6426,7 +6426,7 @@
    "courtesy_name": "宗瀚",
    "art_name": "魁杏",
    "zhaihao": "三硯齋",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -6462,7 +6462,7 @@
    "courtesy_name": "潤之",
    "art_name": "定菴",
    "zhaihao": "",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -7298,7 +7298,7 @@
    "courtesy_name": "振生",
    "art_name": "礪卿",
    "zhaihao": "",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -7314,7 +7314,7 @@
    "courtesy_name": "仲繇",
    "art_name": "問蘧",
    "zhaihao": "問蘧廬",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -7643,7 +7643,7 @@
    "courtesy_name": "筠軒",
    "art_name": "",
    "zhaihao": "得月簃",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -7691,7 +7691,7 @@
    "courtesy_name": "",
    "art_name": "杏齋",
    "zhaihao": "五梅華館",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -8059,7 +8059,7 @@
    "courtesy_name": "彥侍",
    "art_name": "",
    "zhaihao": "咫進齋",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -8385,7 +8385,7 @@
    "courtesy_name": "彙嘉",
    "art_name": "存齋",
    "zhaihao": "",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -8742,7 +8742,7 @@
    "courtesy_name": "鶴亭",
    "art_name": "",
    "zhaihao": "",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -9905,7 +9905,7 @@
    "courtesy_name": "錫京",
    "art_name": "象山",
    "zhaihao": "愛梅樓",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],
@@ -10070,7 +10070,7 @@
    "courtesy_name": "遂生",
    "art_name": "減齋",
    "zhaihao": "受福富昌鏡室",
-   "dynasty": "",
+   "dynasty": "清",
    "tags": [
     "印人"
    ],

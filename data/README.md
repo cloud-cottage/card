@@ -4,10 +4,12 @@
 
 ```
 data/
-├── persons.json   # 人物主表（每人一条，按 person_id 升序）
-├── tags.json      # 标签词表（本期两类）
-├── id-map.json    # 反向映射 / 回填表（person_id ⇄ 数据源 id + 印主印章数）
-└── README.md      # 本文件（口径说明）
+├── persons.json              # 人物主表（每人一条，按 person_id 升序，17 键）
+├── person-index.json         # 轻量索引·瘦版（10 键，不含別號；广场/名录用）
+├── person-index-full.json    # 轻量索引·全版（12 键，含別號/別署齋號；站内搜索用）
+├── tags.json                 # 标签词表（本期两类）
+├── id-map.json               # 反向映射 / 回填表（person_id ⇄ 数据源 id + 印主印章数）
+└── README.md                 # 本文件（口径说明）
 ```
 
 ## 1. `person_id`：九位数字，永不变
@@ -92,3 +94,32 @@ data/
 
 - 纯静态、零构建、零外部请求：JSON 由静态托管直接提供，页面不 fetch、不引 CDN。
 - 仅收录**已故人物**（CARD 既有口径）；数据许可沿用 CARD 首页声明——仅限非商业的公益与学术研究用途，商业使用须事先取得书面许可。
+
+## 9. 轻量索引：`person-index.json` / `person-index-full.json`
+
+供 CARD 之外的消费方（xiai 广场、名录、站内搜索）**只取展示所需字段**，不必拉全量 `persons.json`。
+
+| 文件 | 字段 | 用途 | 本期体积 |
+|---|---|---|---|
+| `person-index.json` | 10 个：`person_id / name / family_name / given_name / courtesy_name / art_name / zhaihao / dynasty / tags / cbdb_id` | 广场卡片、名录列表（**不含別號**，最省） | 149,987 B（gzip ≈ 19 KB） |
+| `person-index-full.json` | 上列 10 个 ＋ `biehao_text / zhaihao_alts` | 站内搜索、人物详情头图（別號多为多行文本，最占体积） | 203,423 B（gzip ≈ 34 KB） |
+
+- **顶层形状与接口回包一致**：`{ "generated_at": "<ISO>", "count": 573, "rows": [ … ] }` —— 只是去掉了接口层恒为 `true` 的 `ok`。`rows` 按 `person_id` 升序；每人**固定键集、缺失用空串/空数组占位**（消费方无需判空）。
+- `generated_at` 是本次拉取时刻（UTC，与 `id-map.json` 同口径）；`count` 恒等于 `rows.length`。
+- 数据来源 = 云函数 `card-api` 的只读 `getIndex` op（`include_biehao` 为 `false` / `true` 各拉一次），**不是**手抄。
+- 体积对照（同日实测）：全量 `persons.json` 616,125 B（gzip ≈ 181 KB）、`exportPersons` 接口回包 987,812 B（gzip ≈ 282 KB）；瘦版约为后者的 **1/9**。
+
+### 何时重生成
+
+`persons.json` 有任何实质变化（新增人物、补字號/齋號/朝代/`cbdb_id`、标签调整）之后重跑：
+
+```bash
+cd /Users/kevin/bistro/card
+node scripts/refresh-index.mjs            # 拉取并覆盖两份索引
+node scripts/refresh-index.mjs --dry-run  # 只打印体积/行数，不写盘
+```
+
+- 脚本仅**开发期**使用（`scripts/` 目录，纯静态托管不引用、不执行）：单文件 ESM、零依赖、Node 18+，用 `fetch` 打 `card-api` 的 HTTP 通道。
+- 密钥**只**从本机 `~/.config/card/api.env` 的 `CARD_API_KEY` 读取（600）；脚本内无密钥、命令行也不接收密钥，产物里只有公开数据。
+- 可选参数：`--out-dir <目录>`（默认 `data`）、`--api-url <url>`（默认线上函数地址）、`--key-file <路径>`。失败即非零退出且**不落半份产物**（临时文件 + rename）。
+- 重生成后必须核：两份 `count` 一致且 = `persons.json` 行数；瘦版每行**必须没有** `biehao_text` 键；`person_id` 无重复。抽查若干人与 `getPerson` 逐字比对（`name/courtesy_name/art_name/zhaihao/dynasty`）。

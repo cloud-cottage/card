@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-15T07:57:49.829Z",
- "count": 580,
+ "generated_at": "2026-11-15T08:19:05.162Z",
+ "count": 577,
  "rows": [
   {
    "person_id": "100000001",
@@ -9230,48 +9230,6 @@
    "art_name": "",
    "zhaihao": "",
    "dynasty": "",
-   "tags": [],
-   "cbdb_id": ""
-  },
-  {
-   "person_id": "100000578",
-   "name": "黃鵷",
-   "family_name": "黃",
-   "given_name": "鵷",
-   "family_name_cht": "黃",
-   "given_name_cht": "鵷",
-   "courtesy_name": "",
-   "art_name": "",
-   "zhaihao": "",
-   "dynasty": "清",
-   "tags": [],
-   "cbdb_id": ""
-  },
-  {
-   "person_id": "100000579",
-   "name": "趙穆",
-   "family_name": "趙",
-   "given_name": "穆",
-   "family_name_cht": "趙",
-   "given_name_cht": "穆",
-   "courtesy_name": "",
-   "art_name": "",
-   "zhaihao": "",
-   "dynasty": "清",
-   "tags": [],
-   "cbdb_id": ""
-  },
-  {
-   "person_id": "100000580",
-   "name": "黃家積",
-   "family_name": "黃",
-   "given_name": "家積",
-   "family_name_cht": "黃",
-   "given_name_cht": "家積",
-   "courtesy_name": "",
-   "art_name": "",
-   "zhaihao": "",
-   "dynasty": "清",
    "tags": [],
    "cbdb_id": ""
   }

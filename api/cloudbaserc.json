@@ -1,0 +1,15 @@
+{
+  "envId": "liwu-cny1313-d1gb2fukyb7cb19bb",
+  "version": "2.0",
+  "functions": [
+    {
+      "name": "card-api",
+      "timeout": 20,
+      "memorySize": 256,
+      "runtime": "Nodejs18.15",
+      "handler": "index.main",
+      "installDependency": true,
+      "ignore": ["node_modules", "node_modules/**/*", "*.zip"]
+    }
+  ]
+}

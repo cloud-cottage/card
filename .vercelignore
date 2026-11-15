@@ -1,0 +1,4 @@
+# 这是 Vercel 静态站（cardreader.top），只发布站点本体。
+# `api/` 里是 **CloudBase 云函数 `card-api` 的源码**（独立部署单元：有自己的 cloudbaserc.json），
+# 仅借本仓做版本管理；**不得**随静态站发布，否则函数源码会变成可公开下载的文件。
+api/

@@ -1,0 +1,11 @@
+{
+  "name": "card-api",
+  "version": "1.0.0",
+  "description": "CARD 主数据库 API（card_persons）—— HTTP 与 callFunction 双通道",
+  "main": "index.js",
+  "private": true,
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@cloudbase/node-sdk": "^3.18.3"
+  }
+}
